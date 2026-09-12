@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  classifier:
+    build: ./ml/classification
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  verification:
+    build: .
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    environment:
+      - LOG_LEVEL=INFO
+      - CLASSIFIER_MODE=http
+      - CLASSIFIER_HTTP_URL=http://classifier:8000
+    depends_on:
+      - classifier
+    restart: unless-stopped
+
+  # Optional: only needed if you wire a real VerificationRepository
+  # against PostgreSQL/PostGIS. Not required for the ML engine itself.
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: mausamnetra
+      POSTGRES_PASSWORD: mausamnetra
+      POSTGRES_DB: mausamnetra
+    ports:
+      - "5432:5432"
+    volumes:
+      - mausamnetra_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  mausamnetra_pgdata:

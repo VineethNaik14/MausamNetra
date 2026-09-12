@@ -1,0 +1,21 @@
+{
+  "model_version": "event-classifier-v1",
+  "trained_at": "2026-09-12T04:41:38.637968+00:00",
+  "classes": [
+    "flood",
+    "heavy_rainfall",
+    "thunderstorm",
+    "heatwave",
+    "fog",
+    "dust_storm",
+    "strong_wind",
+    "cyclone",
+    "lightning",
+    "hailstorm",
+    "other"
+  ],
+  "n_train": 384,
+  "n_val": 83,
+  "n_test": 83,
+  "val_macro_f1": 1.0
+}
