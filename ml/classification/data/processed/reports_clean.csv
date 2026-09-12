@@ -1,0 +1,551 @@
+text,event_type
+"Dust storm reported in Hebbal, air quality has worsened significantly.",dust_storm
+Sharp flashes of lightning visible over the bus stand junction for the last half hour.,lightning
+A cultural festival is being organized in the coastal village this weekend.,other
+"Thick dust clouds moving through the old town, people covering their faces.",dust_storm
+Powerful gusts uprooted a few trees near Koramangala this evening.,strong_wind
+Heavy showers reported across the riverside colony starting around noon with no sign of stopping.,heavy_rainfall
+Water has entered ground floor houses in Hebbal after the rains.,flood
+Very strong winds knocked down a tree on the street in MG Road area.,strong_wind
+The cyclone is expected to make landfall by tonight near Indiranagar.,cyclone
+"A wall of dust swept through the bus stand junction for the past two hours, shops shut their doors.",dust_storm
+Powerful gusts uprooted a few trees near the airport road this evening.,strong_wind
+"Streets in Jayanagar are completely waterlogged and vehicles are stuck, this morning.",flood
+"Streets in the low-lying colony are completely waterlogged and vehicles are stuck, just now.",flood
+"It's a pleasant sunny day today, nice weather for a walk.",other
+The cyclone is expected to make landfall by tonight near the industrial area.,cyclone
+"Torrential rain lashing Yelahanka this morning, people advised to stay indoors.",heavy_rainfall
+"Flood water is rising rapidly near the airport road, residents are moving to higher ground.",flood
+Sudden lightning and thunder started around evening near the industrial area.,thunderstorm
+Strong winds have damaged tin roofs near the outskirts of the city a few hours ago.,strong_wind
+Loud thunderclaps and flashes of lightning reported over the old town.,thunderstorm
+"The heat in the bus stand junction is unbearable a few hours ago, roads look almost empty.",heatwave
+Farmers near the district headquarters report crop damage due to unexpected hailstorm.,hailstorm
+Thunderstorm with gusty winds lashing the coastal village starting around noon.,thunderstorm
+The school near MG Road area announced holidays for an exam schedule.,other
+"Hailstones the size of marbles are falling in near the highway, damaging car windshields.",hailstorm
+"A lightning bolt hit a building near the airport road, minor damage reported.",lightning
+"A thunderstorm hit the hill station town since early morning, strong winds and rain together.",thunderstorm
+"Hailstones the size of marbles are falling in the bus stand junction, damaging car windshields.",hailstorm
+Several homes in the low-lying colony are flooded after the canal overflowed for the past two hours.,flood
+"Dense morning fog reported around MG Road area, flights and trains delayed.",fog
+"Fog has covered the old town completely since last night, traffic moving very slowly.",fog
+Thunderstorm with gusty winds lashing Indiranagar since this afternoon.,thunderstorm
+Farmers near the airport road report crop damage due to unexpected hailstorm.,hailstorm
+Strong winds have damaged tin roofs near MG Road area late last night.,strong_wind
+"Rain has not stopped this morning in the bus stand junction, roads are slippery.",heavy_rainfall
+"Dust storm reported in Yelahanka, air quality has worsened significantly.",dust_storm
+sudden rainfall has flooded the road near Jayanagar.,flood
+"Heavy hailfall reported in near the highway, vehicles parked outside got dented.",hailstorm
+"The river near MG Road area has crossed the danger mark, low-lying areas submerged.",flood
+Fishermen near the market area advised not to venture into the sea due to the cyclone.,cyclone
+"High speed winds reported in near the highway, hoardings blown down.",strong_wind
+"Lightning strike reported near Jayanagar, residents advised to stay indoors.",lightning
+"A thunderstorm hit Indiranagar since this afternoon, strong winds and rain together.",thunderstorm
+"Sudden hailstorm hit Hebbal, crops damaged badly.",hailstorm
+"A lightning bolt hit a building near the railway station road, minor damage reported.",lightning
+"Dust storm reported in the hill station town, air quality has worsened significantly.",dust_storm
+"A wall of dust swept through the low-lying colony since yesterday evening, shops shut their doors.",dust_storm
+Hail has covered the ground like snow near Koramangala this morning.,hailstorm
+"It's a calm and clear evening in the district headquarters, nothing much happening.",other
+"Dense morning fog reported around the market area, flights and trains delayed.",fog
+Coastal areas near MG Road area being evacuated ahead of the approaching cyclone.,cyclone
+Strong winds have damaged tin roofs near MG Road area starting around noon.,strong_wind
+"Gusty winds are shaking windows in Jayanagar, quite strong since this afternoon.",strong_wind
+Thunderstorm with gusty winds lashing the riverside colony late last night.,thunderstorm
+"Dust storm reported in the bus stand junction, air quality has worsened significantly.",dust_storm
+It has been raining heavily for hours in the riverside colony.,heavy_rainfall
+"severe downpour continuing in the low-lying colony, visibility very low.",heavy_rainfall
+"A wall of dust swept through Yelahanka just now, shops shut their doors.",dust_storm
+Loud thunderclaps and flashes of lightning reported over the market area.,thunderstorm
+"Dense morning fog reported around the low-lying colony, flights and trains delayed.",fog
+"High speed winds reported in the low-lying colony, hoardings blown down.",strong_wind
+"Torrential rain lashing MG Road area since this afternoon, people advised to stay indoors.",heavy_rainfall
+"Storm clouds gathering fast above Yelahanka, thunder audible from far.",thunderstorm
+"Heavy hailfall reported in MG Road area, vehicles parked outside got dented.",hailstorm
+Powerful gusts uprooted a few trees near the old town this evening.,strong_wind
+"Fog has covered the hill station town completely since early morning, traffic moving very slowly.",fog
+"Hailstones the size of marbles are falling in Indiranagar, damaging car windshields.",hailstorm
+"The river near the district headquarters has crossed the danger mark, low-lying areas submerged.",flood
+Sharp flashes of lightning visible over the market area for the last half hour.,lightning
+Loud thunderclaps and flashes of lightning reported over the coastal village.,thunderstorm
+Local elections are scheduled next month in Jayanagar.,other
+Water has entered ground floor houses in the bus stand junction after the rains.,flood
+"Thick dust clouds moving through the outskirts of the city, people covering their faces.",dust_storm
+"It's extremely hot in the market area, feels like a heatwave, everyone staying indoors.",heatwave
+Fishermen near Koramangala advised not to venture into the sea due to the cyclone.,cyclone
+Loud thunderclaps and flashes of lightning reported over the bus stand junction.,thunderstorm
+Unusually high temperatures recorded in the railway station road for the third day in a row.,heatwave
+"Heavy hailfall reported in the railway station road, vehicles parked outside got dented.",hailstorm
+"Dark clouds and loud thunder rolling in over the airport road, looks like a storm is coming.",thunderstorm
+"Fog has covered the low-lying colony completely since this afternoon, traffic moving very slowly.",fog
+Very strong winds knocked down a tree on the street in the industrial area.,strong_wind
+Local elections are scheduled next month in the railway station road.,other
+"Cyclone warning issued for the coastal district near the industrial area, evacuation started.",cyclone
+"Cyclone alert issued for the old town, schools shut as a precaution.",cyclone
+"Streets in the riverside colony are completely waterlogged and vehicles are stuck, since last night.",flood
+Heavy showers reported across the bus stand junction starting around noon with no sign of stopping.,heavy_rainfall
+"Nonstop rain since last night, streets are waterlogged near the railway station road.",heavy_rainfall
+"Lightning strike reported near MG Road area, residents advised to stay indoors.",lightning
+"The heat in Yelahanka is unbearable since this afternoon, roads look almost empty.",heatwave
+Powerful gusts uprooted a few trees near the bus stand junction this evening.,strong_wind
+Very strong winds knocked down a tree on the street in Whitefield.,strong_wind
+The school near Indiranagar announced holidays for an exam schedule.,other
+"continuous downpour continuing in Koramangala, visibility very low.",heavy_rainfall
+"Dark clouds and loud thunder rolling in over the market area, looks like a storm is coming.",thunderstorm
+"Strong dusty winds picked up near the old town, visibility dropping fast.",dust_storm
+extreme rainfall has flooded the road near the bus stand junction.,flood
+"A wall of dust swept through the bus stand junction since early morning, shops shut their doors.",dust_storm
+"The river near the hill station town has crossed the danger mark, low-lying areas submerged.",flood
+"A road accident was reported near the market area, traffic diverted.",other
+"Gusty winds are shaking windows in the airport road, quite strong starting around noon.",strong_wind
+It has been raining heavily for hours in the low-lying colony.,heavy_rainfall
+"Flood water is rising rapidly near Koramangala, residents are moving to higher ground.",flood
+"Scorching heat continues in Indiranagar since yesterday evening, people advised to avoid stepping out.",heatwave
+Thunderstorm with gusty winds lashing MG Road area just now.,thunderstorm
+"Rain has not stopped since last night in Jayanagar, roads are slippery.",heavy_rainfall
+Fishermen near MG Road area advised not to venture into the sea due to the cyclone.,cyclone
+It has been raining heavily for hours in Yelahanka.,heavy_rainfall
+The cyclone is expected to make landfall by tonight near the outskirts of the city.,cyclone
+Thick fog has reduced visibility to almost zero on the highway near the old town.,fog
+"A lightning bolt hit a building near the market area, minor damage reported.",lightning
+"Rain has not stopped for the past two hours in Hebbal, roads are slippery.",heavy_rainfall
+Powerful gusts uprooted a few trees near the coastal village this evening.,strong_wind
+"Rain has not stopped for the past two hours in the riverside colony, roads are slippery.",heavy_rainfall
+"Hailstones the size of marbles are falling in the industrial area, damaging car windshields.",hailstorm
+continuous rainfall has flooded the road near Jayanagar.,flood
+"Dark clouds and loud thunder rolling in over Yelahanka, looks like a storm is coming.",thunderstorm
+Visibility is very poor due to fog near MG Road area since yesterday evening.,fog
+"A wall of dust swept through Indiranagar since yesterday evening, shops shut their doors.",dust_storm
+"Cannot see beyond a few meters, dense fog since early morning in Whitefield.",fog
+"Cyclone alert issued for Indiranagar, schools shut as a precaution.",cyclone
+Coastal areas near the railway station road being evacuated ahead of the approaching cyclone.,cyclone
+"The heat in MG Road area is unbearable starting around noon, roads look almost empty.",heatwave
+Farmers near the industrial area report crop damage due to unexpected hailstorm.,hailstorm
+"Fog has covered the market area completely late last night, traffic moving very slowly.",fog
+The football tournament finals were held in the old town yesterday.,other
+"Cyclone alert issued for the coastal village, schools shut as a precaution.",cyclone
+Very strong winds knocked down a tree on the street in the coastal village.,strong_wind
+Loud thunderclaps and flashes of lightning reported over the railway station road.,thunderstorm
+Visibility is very poor due to fog near the market area starting around noon.,fog
+Hail has covered the ground like snow near the riverside colony this morning.,hailstorm
+Visibility is very poor due to fog near the low-lying colony since early morning.,fog
+"A road accident was reported near the outskirts of the city, traffic diverted.",other
+Unusually high temperatures recorded in Koramangala for the third day in a row.,heatwave
+"Lightning strike reported near the outskirts of the city, residents advised to stay indoors.",lightning
+"The heat in the low-lying colony is unbearable since yesterday evening, roads look almost empty.",heatwave
+A cultural festival is being organized in Hebbal this weekend.,other
+The metro line extension to the market area was inaugurated today.,other
+"A lightning bolt hit a building near the riverside colony, minor damage reported.",lightning
+"A wall of dust swept through the coastal village since this afternoon, shops shut their doors.",dust_storm
+"Lightning strike reported near the low-lying colony, residents advised to stay indoors.",lightning
+Loud thunderclaps and flashes of lightning reported over the low-lying colony.,thunderstorm
+"Heavy hailfall reported in the industrial area, vehicles parked outside got dented.",hailstorm
+Garbage collection was delayed in the old town today.,other
+"Cyclone warning issued for the coastal district near the low-lying colony, evacuation started.",cyclone
+Unusually high temperatures recorded in the airport road for the third day in a row.,heatwave
+"Heavy hailfall reported in the market area, vehicles parked outside got dented.",hailstorm
+"Torrential rain lashing Hebbal since last night, people advised to stay indoors.",heavy_rainfall
+"Flood water is rising rapidly near the bus stand junction, residents are moving to higher ground.",flood
+Local elections are scheduled next month in Yelahanka.,other
+"Flood water is rising rapidly near the railway station road, residents are moving to higher ground.",flood
+Thick fog has reduced visibility to almost zero on the highway near Jayanagar.,fog
+Thick fog has reduced visibility to almost zero on the highway near Indiranagar.,fog
+"Dust storm hit the market area suddenly, sky turned orange, hard to breathe outside.",dust_storm
+"Thick dust clouds moving through the riverside colony, people covering their faces.",dust_storm
+Frequent lightning strikes reported in the sky over the bus stand junction since yesterday evening.,lightning
+A new flyover is being constructed near the riverside colony.,other
+"A lightning bolt hit a building near the low-lying colony, minor damage reported.",lightning
+Local elections are scheduled next month in the low-lying colony.,other
+Very strong winds knocked down a tree on the street in the railway station road.,strong_wind
+"It's extremely hot in the outskirts of the city, feels like a heatwave, everyone staying indoors.",heatwave
+Sharp flashes of lightning visible over the airport road for the last half hour.,lightning
+"A road accident was reported near the low-lying colony, traffic diverted.",other
+Internet has been down in the riverside colony since this morning.,other
+"It's a calm and clear evening in the old town, nothing much happening.",other
+"A thunderstorm hit the district headquarters since this afternoon, strong winds and rain together.",thunderstorm
+Loud thunderclaps and flashes of lightning reported over the district headquarters.,thunderstorm
+Coastal areas near the market area being evacuated ahead of the approaching cyclone.,cyclone
+"Lightning strike reported near Indiranagar, residents advised to stay indoors.",lightning
+The traffic on MG Road is very slow today.,other
+"Dense morning fog reported around the coastal village, flights and trains delayed.",fog
+"Sudden hailstorm hit the riverside colony, crops damaged badly.",hailstorm
+Heavy showers reported across the district headquarters late last night with no sign of stopping.,heavy_rainfall
+The cyclone is expected to make landfall by tonight near the market area.,cyclone
+"Cyclone warning issued for the coastal district near the riverside colony, evacuation started.",cyclone
+"A wall of dust swept through the outskirts of the city starting around noon, shops shut their doors.",dust_storm
+"A thunderstorm hit the coastal village a few hours ago, strong winds and rain together.",thunderstorm
+The metro line extension to the low-lying colony was inaugurated today.,other
+"A wall of dust swept through the old town since this afternoon, shops shut their doors.",dust_storm
+A new flyover is being constructed near the hill station town.,other
+"Thick dust clouds moving through the industrial area, people covering their faces.",dust_storm
+"Temperature touched extreme highs today in Whitefield, unbearable heat since morning.",heatwave
+"Streets in MG Road area are completely waterlogged and vehicles are stuck, since last night.",flood
+Heavy showers reported across the old town since last night with no sign of stopping.,heavy_rainfall
+"Lightning strike reported near Yelahanka, residents advised to stay indoors.",lightning
+Sharp flashes of lightning visible over the railway station road for the last half hour.,lightning
+"Cyclone warning issued for the coastal district near the railway station road, evacuation started.",cyclone
+The cyclone is expected to make landfall by tonight near the riverside colony.,cyclone
+Sharp flashes of lightning visible over the riverside colony for the last half hour.,lightning
+Several homes in Jayanagar are flooded after the canal overflowed since yesterday evening.,flood
+"Dark clouds and loud thunder rolling in over the old town, looks like a storm is coming.",thunderstorm
+"Storm clouds gathering fast above Jayanagar, thunder audible from far.",thunderstorm
+Strong winds have damaged tin roofs near Jayanagar since last night.,strong_wind
+Strong winds have damaged tin roofs near the riverside colony since early morning.,strong_wind
+"High speed winds reported in the bus stand junction, hoardings blown down.",strong_wind
+The cyclone is expected to make landfall by tonight near Koramangala.,cyclone
+Hail has covered the ground like snow near the district headquarters late last night.,hailstorm
+"A thunderstorm hit the hill station town just now, strong winds and rain together.",thunderstorm
+"Rain has not stopped since last night in the old town, roads are slippery.",heavy_rainfall
+"Lightning strike reported near the coastal village, residents advised to stay indoors.",lightning
+"A road accident was reported near the hill station town, traffic diverted.",other
+Coastal areas near the industrial area being evacuated ahead of the approaching cyclone.,cyclone
+Prices of vegetables have gone up in the the old town market.,other
+Farmers near the low-lying colony report crop damage due to unexpected hailstorm.,hailstorm
+Strong winds have damaged tin roofs near the coastal village for the past two hours.,strong_wind
+"Lightning struck a tree near the park in Yelahanka just now, loud bang heard.",lightning
+"Dust storm reported in Koramangala, air quality has worsened significantly.",dust_storm
+It has been raining heavily for hours in the coastal village.,heavy_rainfall
+"Temperature touched extreme highs today in Koramangala, unbearable heat since morning.",heatwave
+"Lightning strike reported near the industrial area, residents advised to stay indoors.",lightning
+"Dust storm hit MG Road area suddenly, sky turned orange, hard to breathe outside.",dust_storm
+"High speed winds reported in the district headquarters, hoardings blown down.",strong_wind
+Sharp flashes of lightning visible over the low-lying colony for the last half hour.,lightning
+"Temperature touched extreme highs today in the industrial area, unbearable heat since morning.",heatwave
+"Heavy hailfall reported in the hill station town, vehicles parked outside got dented.",hailstorm
+"Dust storm reported in Indiranagar, air quality has worsened significantly.",dust_storm
+"Fog has covered the airport road completely for the past two hours, traffic moving very slowly.",fog
+The new mall near MG Road area is finally open for shopping.,other
+"Fog has covered the airport road completely since this afternoon, traffic moving very slowly.",fog
+Water has entered ground floor houses in the coastal village after the rains.,flood
+"extreme downpour continuing in the coastal village, visibility very low.",heavy_rainfall
+The metro line extension to Whitefield was inaugurated today.,other
+"sudden downpour continuing in Whitefield, visibility very low.",heavy_rainfall
+"Dark clouds and loud thunder rolling in over near the highway, looks like a storm is coming.",thunderstorm
+"It's extremely hot in the hill station town, feels like a heatwave, everyone staying indoors.",heatwave
+"Strong dusty winds picked up near Koramangala, visibility dropping fast.",dust_storm
+Sudden lightning and thunder started around evening near Yelahanka.,thunderstorm
+"Streets in the bus stand junction are completely waterlogged and vehicles are stuck, late last night.",flood
+"Dark clouds and loud thunder rolling in over the hill station town, looks like a storm is coming.",thunderstorm
+"A wall of dust swept through the district headquarters late last night, shops shut their doors.",dust_storm
+The metro line extension to MG Road area was inaugurated today.,other
+"Storm clouds gathering fast above the district headquarters, thunder audible from far.",thunderstorm
+"Hailstones the size of marbles are falling in the hill station town, damaging car windshields.",hailstorm
+"Hailstones the size of marbles are falling in the airport road, damaging car windshields.",hailstorm
+"A lightning bolt hit a building near MG Road area, minor damage reported.",lightning
+"severe downpour continuing in the riverside colony, visibility very low.",heavy_rainfall
+"Torrential rain lashing Yelahanka since last night, people advised to stay indoors.",heavy_rainfall
+Heavy showers reported across near the highway late last night with no sign of stopping.,heavy_rainfall
+"Streets in MG Road area are completely waterlogged and vehicles are stuck, since early morning.",flood
+Strong winds have damaged tin roofs near the low-lying colony starting around noon.,strong_wind
+"Fog has covered the airport road completely since yesterday evening, traffic moving very slowly.",fog
+Several homes in the coastal village are flooded after the canal overflowed since this afternoon.,flood
+"New restaurant opened near my house, food is amazing.",other
+Visibility is very poor due to fog near the coastal village starting around noon.,fog
+"Hailstones the size of marbles are falling in the coastal village, damaging car windshields.",hailstorm
+"severe downpour continuing in the outskirts of the city, visibility very low.",heavy_rainfall
+"Streets in MG Road area are completely waterlogged and vehicles are stuck, late last night.",flood
+"Strong dusty winds picked up near the bus stand junction, visibility dropping fast.",dust_storm
+Fishermen near Whitefield advised not to venture into the sea due to the cyclone.,cyclone
+Heavy showers reported across Jayanagar just now with no sign of stopping.,heavy_rainfall
+"Power cut in our area since morning, no idea why.",other
+Very strong winds knocked down a tree on the street in the riverside colony.,strong_wind
+"Scorching heat continues in the airport road since yesterday evening, people advised to avoid stepping out.",heatwave
+"Heatwave conditions reported in Indiranagar, several cases of heat exhaustion.",heatwave
+"It's extremely hot in the district headquarters, feels like a heatwave, everyone staying indoors.",heatwave
+"Cyclone warning issued for the coastal district near the old town, evacuation started.",cyclone
+"Cannot see beyond a few meters, dense fog since early morning in the hill station town.",fog
+Thick fog has reduced visibility to almost zero on the highway near the hill station town.,fog
+"Temperature touched extreme highs today in the low-lying colony, unbearable heat since morning.",heatwave
+"Fog has covered the railway station road completely since yesterday evening, traffic moving very slowly.",fog
+"Strong dusty winds picked up near Yelahanka, visibility dropping fast.",dust_storm
+"A thunderstorm hit Jayanagar for the past two hours, strong winds and rain together.",thunderstorm
+"Dark clouds and loud thunder rolling in over MG Road area, looks like a storm is coming.",thunderstorm
+Frequent lightning strikes reported in the sky over the airport road late last night.,lightning
+Several homes in the old town are flooded after the canal overflowed starting around noon.,flood
+Powerful gusts uprooted a few trees near Whitefield this evening.,strong_wind
+Sharp flashes of lightning visible over Whitefield for the last half hour.,lightning
+"Just watched a great cricket match last night, what a finish.",other
+Visibility is very poor due to fog near the outskirts of the city for the past two hours.,fog
+Knee-deep water reported on the main road in the outskirts of the city starting around noon.,flood
+Fishermen near Yelahanka advised not to venture into the sea due to the cyclone.,cyclone
+Sharp flashes of lightning visible over the outskirts of the city for the last half hour.,lightning
+"Dark clouds and loud thunder rolling in over the riverside colony, looks like a storm is coming.",thunderstorm
+"Rain has not stopped since last night in Koramangala, roads are slippery.",heavy_rainfall
+Coastal areas near the district headquarters being evacuated ahead of the approaching cyclone.,cyclone
+Very strong winds knocked down a tree on the street in Koramangala.,strong_wind
+"Drainage has failed in the coastal village, water entering shops and houses since yesterday evening.",flood
+Thick fog has reduced visibility to almost zero on the highway near near the highway.,fog
+"Strong dusty winds picked up near the airport road, visibility dropping fast.",dust_storm
+Local elections are scheduled next month in the coastal village.,other
+Visibility is very poor due to fog near the old town a few hours ago.,fog
+Very strong winds knocked down a tree on the street in Jayanagar.,strong_wind
+"Sudden hailstorm hit the district headquarters, crops damaged badly.",hailstorm
+Frequent lightning strikes reported in the sky over the airport road since last night.,lightning
+"Temperature touched extreme highs today in near the highway, unbearable heat since morning.",heatwave
+"Dense morning fog reported around near the highway, flights and trains delayed.",fog
+"Sudden hailstorm hit Koramangala, crops damaged badly.",hailstorm
+Loud thunderclaps and flashes of lightning reported over the airport road.,thunderstorm
+Hail has covered the ground like snow near the riverside colony since last night.,hailstorm
+Strong winds have damaged tin roofs near Whitefield for the past two hours.,strong_wind
+Fishermen near the riverside colony advised not to venture into the sea due to the cyclone.,cyclone
+"Dust storm reported in near the highway, air quality has worsened significantly.",dust_storm
+"Fog has covered the coastal village completely since yesterday evening, traffic moving very slowly.",fog
+Water has entered ground floor houses in the riverside colony after the rains.,flood
+Powerful gusts uprooted a few trees near near the highway this evening.,strong_wind
+"Dense morning fog reported around Koramangala, flights and trains delayed.",fog
+Sudden lightning and thunder started around evening near the outskirts of the city.,thunderstorm
+"Cannot see beyond a few meters, dense fog since early morning in the old town.",fog
+Fishermen near the old town advised not to venture into the sea due to the cyclone.,cyclone
+"It's a calm and clear evening in Hebbal, nothing much happening.",other
+"severe downpour continuing in MG Road area, visibility very low.",heavy_rainfall
+"Thick dust clouds moving through the hill station town, people covering their faces.",dust_storm
+Strong winds have damaged tin roofs near the low-lying colony since this afternoon.,strong_wind
+"It's a calm and clear evening in Koramangala, nothing much happening.",other
+It has been raining heavily for hours in the hill station town.,heavy_rainfall
+"Temperature touched extreme highs today in the outskirts of the city, unbearable heat since morning.",heatwave
+Visibility is very poor due to fog near the market area since yesterday evening.,fog
+Hail has covered the ground like snow near the old town this morning.,hailstorm
+"Lightning struck a tree near the park in Whitefield just now, loud bang heard.",lightning
+"Cyclone warning issued for the coastal district near the hill station town, evacuation started.",cyclone
+"A lightning bolt hit a building near the coastal village, minor damage reported.",lightning
+"A wall of dust swept through the airport road since this afternoon, shops shut their doors.",dust_storm
+"Lightning struck a tree near the park in Koramangala just now, loud bang heard.",lightning
+Garbage collection was delayed in the district headquarters today.,other
+"The heat in the old town is unbearable since last night, roads look almost empty.",heatwave
+"Lightning struck a tree near the park in the coastal village just now, loud bang heard.",lightning
+"extreme downpour continuing in Koramangala, visibility very low.",heavy_rainfall
+"Scorching heat continues in Yelahanka since this afternoon, people advised to avoid stepping out.",heatwave
+Thick fog has reduced visibility to almost zero on the highway near Yelahanka.,fog
+Loud thunderclaps and flashes of lightning reported over Hebbal.,thunderstorm
+"High speed winds reported in the old town, hoardings blown down.",strong_wind
+"Scorching heat continues in the airport road since last night, people advised to avoid stepping out.",heatwave
+"Gusty winds are shaking windows in Koramangala, quite strong just now.",strong_wind
+"Gusty winds are shaking windows in the hill station town, quite strong since this afternoon.",strong_wind
+Prices of vegetables have gone up in the the railway station road market.,other
+The cyclone is expected to make landfall by tonight near Yelahanka.,cyclone
+Unusually high temperatures recorded in the market area for the third day in a row.,heatwave
+"Fog has covered the airport road completely starting around noon, traffic moving very slowly.",fog
+"Heatwave conditions reported in Yelahanka, several cases of heat exhaustion.",heatwave
+The cyclone is expected to make landfall by tonight near MG Road area.,cyclone
+"Gusty winds are shaking windows in the industrial area, quite strong since yesterday evening.",strong_wind
+"It's extremely hot in the railway station road, feels like a heatwave, everyone staying indoors.",heatwave
+"Cannot see beyond a few meters, dense fog since early morning in the riverside colony.",fog
+severe rainfall has flooded the road near Whitefield.,flood
+"It's extremely hot in Whitefield, feels like a heatwave, everyone staying indoors.",heatwave
+"Rain has not stopped late last night in the railway station road, roads are slippery.",heavy_rainfall
+Fishermen near the coastal village advised not to venture into the sea due to the cyclone.,cyclone
+"Dense morning fog reported around the industrial area, flights and trains delayed.",fog
+"Storm clouds gathering fast above the hill station town, thunder audible from far.",thunderstorm
+"High speed winds reported in Whitefield, hoardings blown down.",strong_wind
+Frequent lightning strikes reported in the sky over the outskirts of the city since this afternoon.,lightning
+"Thick dust clouds moving through Indiranagar, people covering their faces.",dust_storm
+"High speed winds reported in the market area, hoardings blown down.",strong_wind
+Sharp flashes of lightning visible over the hill station town for the last half hour.,lightning
+"Dark clouds and loud thunder rolling in over Hebbal, looks like a storm is coming.",thunderstorm
+Coastal areas near Indiranagar being evacuated ahead of the approaching cyclone.,cyclone
+"Hailstones the size of marbles are falling in the district headquarters, damaging car windshields.",hailstorm
+Thick fog has reduced visibility to almost zero on the highway near the riverside colony.,fog
+Hail has covered the ground like snow near the market area just now.,hailstorm
+"Cannot see beyond a few meters, dense fog since early morning in the market area.",fog
+Loud thunderclaps and flashes of lightning reported over the hill station town.,thunderstorm
+"Fog has covered Jayanagar completely since last night, traffic moving very slowly.",fog
+Heavy showers reported across Yelahanka a few hours ago with no sign of stopping.,heavy_rainfall
+Internet has been down in the hill station town since this morning.,other
+"Torrential rain lashing the low-lying colony late last night, people advised to stay indoors.",heavy_rainfall
+"Dust storm hit the district headquarters suddenly, sky turned orange, hard to breathe outside.",dust_storm
+"Cyclone alert issued for the railway station road, schools shut as a precaution.",cyclone
+"Temperature touched extreme highs today in the bus stand junction, unbearable heat since morning.",heatwave
+Sharp flashes of lightning visible over Hebbal for the last half hour.,lightning
+"Hailstones the size of marbles are falling in the outskirts of the city, damaging car windshields.",hailstorm
+"A road accident was reported near the industrial area, traffic diverted.",other
+Water supply has been irregular in Koramangala for unrelated pipeline work.,other
+"Hailstones the size of marbles are falling in the riverside colony, damaging car windshields.",hailstorm
+"Nonstop rain late last night, streets are waterlogged near Yelahanka.",heavy_rainfall
+"A wall of dust swept through Jayanagar since last night, shops shut their doors.",dust_storm
+"Thick dust clouds moving through the low-lying colony, people covering their faces.",dust_storm
+"Storm clouds gathering fast above the airport road, thunder audible from far.",thunderstorm
+"Dust storm hit the bus stand junction suddenly, sky turned orange, hard to breathe outside.",dust_storm
+Frequent lightning strikes reported in the sky over Jayanagar just now.,lightning
+"The heat in Whitefield is unbearable a few hours ago, roads look almost empty.",heatwave
+Visibility is very poor due to fog near Koramangala for the past two hours.,fog
+Sudden lightning and thunder started around evening near Whitefield.,thunderstorm
+"Flood water is rising rapidly near Hebbal, residents are moving to higher ground.",flood
+Unusually high temperatures recorded in the hill station town for the third day in a row.,heatwave
+"The heat in the industrial area is unbearable since last night, roads look almost empty.",heatwave
+Strong winds have damaged tin roofs near the industrial area since last night.,strong_wind
+"High speed winds reported in Koramangala, hoardings blown down.",strong_wind
+Knee-deep water reported on the main road in Hebbal since this afternoon.,flood
+Hail has covered the ground like snow near the outskirts of the city starting around noon.,hailstorm
+"Heatwave conditions reported in the old town, several cases of heat exhaustion.",heatwave
+Knee-deep water reported on the main road in the district headquarters late last night.,flood
+"Streets in Whitefield are completely waterlogged and vehicles are stuck, this morning.",flood
+Fishermen near near the highway advised not to venture into the sea due to the cyclone.,cyclone
+"Dense morning fog reported around Yelahanka, flights and trains delayed.",fog
+"Strong dusty winds picked up near Whitefield, visibility dropping fast.",dust_storm
+"Thick dust clouds moving through Hebbal, people covering their faces.",dust_storm
+"Strong dusty winds picked up near MG Road area, visibility dropping fast.",dust_storm
+Visibility is very poor due to fog near MG Road area for the past two hours.,fog
+"Dense morning fog reported around the riverside colony, flights and trains delayed.",fog
+Frequent lightning strikes reported in the sky over Indiranagar since this afternoon.,lightning
+"Streets in the riverside colony are completely waterlogged and vehicles are stuck, for the past two hours.",flood
+"Torrential rain lashing the bus stand junction this morning, people advised to stay indoors.",heavy_rainfall
+"Rain has not stopped starting around noon in the old town, roads are slippery.",heavy_rainfall
+Hail has covered the ground like snow near Whitefield since this afternoon.,hailstorm
+"Cyclone warning issued for the coastal district near the district headquarters, evacuation started.",cyclone
+"A lightning bolt hit a building near the old town, minor damage reported.",lightning
+Thick fog has reduced visibility to almost zero on the highway near MG Road area.,fog
+"It's extremely hot in the old town, feels like a heatwave, everyone staying indoors.",heatwave
+Water has entered ground floor houses in the low-lying colony after the rains.,flood
+Water has entered ground floor houses in the old town after the rains.,flood
+"Rain has not stopped for the past two hours in the industrial area, roads are slippery.",heavy_rainfall
+"It's extremely hot in Yelahanka, feels like a heatwave, everyone staying indoors.",heatwave
+"The heat in the outskirts of the city is unbearable since last night, roads look almost empty.",heatwave
+"Heavy hailfall reported in the outskirts of the city, vehicles parked outside got dented.",hailstorm
+Prices of vegetables have gone up in the the district headquarters market.,other
+"Lightning struck a tree near the park in the outskirts of the city just now, loud bang heard.",lightning
+Farmers near the riverside colony report crop damage due to unexpected hailstorm.,hailstorm
+"A lightning bolt hit a building near the industrial area, minor damage reported.",lightning
+"Heavy hailfall reported in Yelahanka, vehicles parked outside got dented.",hailstorm
+Hail has covered the ground like snow near the outskirts of the city since last night.,hailstorm
+"Nonstop rain starting around noon, streets are waterlogged near Hebbal.",heavy_rainfall
+Thunderstorm with gusty winds lashing the old town since yesterday evening.,thunderstorm
+"The river near near the highway has crossed the danger mark, low-lying areas submerged.",flood
+unusually strong rainfall has flooded the road near the airport road.,flood
+The cyclone is expected to make landfall by tonight near the district headquarters.,cyclone
+Loud thunderclaps and flashes of lightning reported over Indiranagar.,thunderstorm
+Frequent lightning strikes reported in the sky over the industrial area late last night.,lightning
+"Heatwave conditions reported in Jayanagar, several cases of heat exhaustion.",heatwave
+"High speed winds reported in the hill station town, hoardings blown down.",strong_wind
+"Cyclone alert issued for near the highway, schools shut as a precaution.",cyclone
+Several homes in the outskirts of the city are flooded after the canal overflowed late last night.,flood
+"Temperature touched extreme highs today in the coastal village, unbearable heat since morning.",heatwave
+"Gusty winds are shaking windows in the old town, quite strong since last night.",strong_wind
+"Dust storm reported in Jayanagar, air quality has worsened significantly.",dust_storm
+Powerful gusts uprooted a few trees near Indiranagar this evening.,strong_wind
+The new mall near the hill station town is finally open for shopping.,other
+Thick fog has reduced visibility to almost zero on the highway near the district headquarters.,fog
+"Heatwave conditions reported in the district headquarters, several cases of heat exhaustion.",heatwave
+"Dust storm reported in Whitefield, air quality has worsened significantly.",dust_storm
+Unusually high temperatures recorded in the industrial area for the third day in a row.,heatwave
+Thunderstorm with gusty winds lashing the outskirts of the city since early morning.,thunderstorm
+"A wall of dust swept through the district headquarters since yesterday evening, shops shut their doors.",dust_storm
+Visibility is very poor due to fog near the railway station road a few hours ago.,fog
+Frequent lightning strikes reported in the sky over the market area late last night.,lightning
+"A thunderstorm hit Jayanagar late last night, strong winds and rain together.",thunderstorm
+Strong winds have damaged tin roofs near Koramangala just now.,strong_wind
+Knee-deep water reported on the main road in Indiranagar since early morning.,flood
+"The heat in Jayanagar is unbearable this morning, roads look almost empty.",heatwave
+The cyclone is expected to make landfall by tonight near Hebbal.,cyclone
+Hail has covered the ground like snow near MG Road area since last night.,hailstorm
+Very strong winds knocked down a tree on the street in the hill station town.,strong_wind
+Very strong winds knocked down a tree on the street in Indiranagar.,strong_wind
+Fishermen near Indiranagar advised not to venture into the sea due to the cyclone.,cyclone
+Powerful gusts uprooted a few trees near the industrial area this evening.,strong_wind
+"The heat in the coastal village is unbearable since early morning, roads look almost empty.",heatwave
+"Sudden hailstorm hit the old town, crops damaged badly.",hailstorm
+Frequent lightning strikes reported in the sky over the coastal village since yesterday evening.,lightning
+Thunderstorm with gusty winds lashing Yelahanka since yesterday evening.,thunderstorm
+Visibility is very poor due to fog near Hebbal late last night.,fog
+It has been raining heavily for hours in near the highway.,heavy_rainfall
+Water has entered ground floor houses in Koramangala after the rains.,flood
+"Temperature touched extreme highs today in the railway station road, unbearable heat since morning.",heatwave
+"Cyclone alert issued for the airport road, schools shut as a precaution.",cyclone
+"Strong dusty winds picked up near the coastal village, visibility dropping fast.",dust_storm
+Water has entered ground floor houses in Whitefield after the rains.,flood
+Coastal areas near Yelahanka being evacuated ahead of the approaching cyclone.,cyclone
+"Cyclone alert issued for the riverside colony, schools shut as a precaution.",cyclone
+"Lightning struck a tree near the park in the district headquarters just now, loud bang heard.",lightning
+"Nonstop rain since last night, streets are waterlogged near the airport road.",heavy_rainfall
+"Cyclone warning issued for the coastal district near Whitefield, evacuation started.",cyclone
+Internet has been down in the old town since this morning.,other
+The school near Jayanagar announced holidays for an exam schedule.,other
+"The heat in the district headquarters is unbearable a few hours ago, roads look almost empty.",heatwave
+"Thick dust clouds moving through MG Road area, people covering their faces.",dust_storm
+"Sudden hailstorm hit the hill station town, crops damaged badly.",hailstorm
+Powerful gusts uprooted a few trees near MG Road area this evening.,strong_wind
+"It's extremely hot in the bus stand junction, feels like a heatwave, everyone staying indoors.",heatwave
+"A lightning bolt hit a building near the district headquarters, minor damage reported.",lightning
+"Lightning strike reported near near the highway, residents advised to stay indoors.",lightning
+"A road accident was reported near MG Road area, traffic diverted.",other
+"A thunderstorm hit the coastal village late last night, strong winds and rain together.",thunderstorm
+"Sudden hailstorm hit the market area, crops damaged badly.",hailstorm
+Heavy showers reported across the riverside colony since this afternoon with no sign of stopping.,heavy_rainfall
+"Heatwave conditions reported in near the highway, several cases of heat exhaustion.",heatwave
+"Streets in Koramangala are completely waterlogged and vehicles are stuck, just now.",flood
+"Dense morning fog reported around Whitefield, flights and trains delayed.",fog
+Farmers near Indiranagar report crop damage due to unexpected hailstorm.,hailstorm
+"Cyclone alert issued for Koramangala, schools shut as a precaution.",cyclone
+"Lightning strike reported near the riverside colony, residents advised to stay indoors.",lightning
+"Cyclone alert issued for the market area, schools shut as a precaution.",cyclone
+"Torrential rain lashing Whitefield for the past two hours, people advised to stay indoors.",heavy_rainfall
+"Gusty winds are shaking windows in the market area, quite strong since last night.",strong_wind
+"A thunderstorm hit the riverside colony just now, strong winds and rain together.",thunderstorm
+"Streets in Jayanagar are completely waterlogged and vehicles are stuck, since last night.",flood
+"Scorching heat continues in the low-lying colony for the past two hours, people advised to avoid stepping out.",heatwave
+"Lightning strike reported near the hill station town, residents advised to stay indoors.",lightning
+Farmers near the old town report crop damage due to unexpected hailstorm.,hailstorm
+"Rain has not stopped this morning in near the highway, roads are slippery.",heavy_rainfall
+"Streets in near the highway are completely waterlogged and vehicles are stuck, since last night.",flood
+Strong winds have damaged tin roofs near the old town since early morning.,strong_wind
+"Dust storm hit Hebbal suddenly, sky turned orange, hard to breathe outside.",dust_storm
+"Strong dusty winds picked up near the hill station town, visibility dropping fast.",dust_storm
+"Heavy hailfall reported in Koramangala, vehicles parked outside got dented.",hailstorm
+Sudden lightning and thunder started around evening near the low-lying colony.,thunderstorm
+"Heavy hailfall reported in the bus stand junction, vehicles parked outside got dented.",hailstorm
+Coastal areas near Koramangala being evacuated ahead of the approaching cyclone.,cyclone
+sudden rainfall has flooded the road near Yelahanka.,flood
+Farmers near near the highway report crop damage due to unexpected hailstorm.,hailstorm
+"Drainage has failed in MG Road area, water entering shops and houses since yesterday evening.",flood
+Sudden lightning and thunder started around evening near the riverside colony.,thunderstorm
+Visibility is very poor due to fog near Whitefield just now.,fog
+"Dust storm hit Indiranagar suddenly, sky turned orange, hard to breathe outside.",dust_storm
+"Hailstones the size of marbles are falling in the low-lying colony, damaging car windshields.",hailstorm
+"Cyclone alert issued for MG Road area, schools shut as a precaution.",cyclone
+The metro line extension to Hebbal was inaugurated today.,other
+"Sudden hailstorm hit the bus stand junction, crops damaged badly.",hailstorm
+"A thunderstorm hit Whitefield since yesterday evening, strong winds and rain together.",thunderstorm
+Sudden lightning and thunder started around evening near Jayanagar.,thunderstorm
+Water has entered ground floor houses in the outskirts of the city after the rains.,flood
+The school near Whitefield announced holidays for an exam schedule.,other
+"A wall of dust swept through the low-lying colony for the past two hours, shops shut their doors.",dust_storm
+Hail has covered the ground like snow near the hill station town a few hours ago.,hailstorm
+"Rain has not stopped this morning in MG Road area, roads are slippery.",heavy_rainfall
+"Gusty winds are shaking windows in Whitefield, quite strong a few hours ago.",strong_wind
+Sharp flashes of lightning visible over the industrial area for the last half hour.,lightning
+The school near Yelahanka announced holidays for an exam schedule.,other
+"Torrential rain lashing Hebbal late last night, people advised to stay indoors.",heavy_rainfall
+"It's extremely hot in the industrial area, feels like a heatwave, everyone staying indoors.",heatwave
+Several homes in Yelahanka are flooded after the canal overflowed since early morning.,flood
+It has been raining heavily for hours in the outskirts of the city.,heavy_rainfall
+Farmers near the outskirts of the city report crop damage due to unexpected hailstorm.,hailstorm
+"Cyclone alert issued for the industrial area, schools shut as a precaution.",cyclone
+Coastal areas near Jayanagar being evacuated ahead of the approaching cyclone.,cyclone
+Local elections are scheduled next month in Koramangala.,other
+"Nonstop rain late last night, streets are waterlogged near MG Road area.",heavy_rainfall
+Knee-deep water reported on the main road in Yelahanka since yesterday evening.,flood
+"continuous downpour continuing in Indiranagar, visibility very low.",heavy_rainfall
+Powerful gusts uprooted a few trees near the outskirts of the city this evening.,strong_wind
+"Fog has covered Hebbal completely since yesterday evening, traffic moving very slowly.",fog
+Visibility is very poor due to fog near the old town starting around noon.,fog
+Farmers near the coastal village report crop damage due to unexpected hailstorm.,hailstorm
+Frequent lightning strikes reported in the sky over Jayanagar since last night.,lightning
+Coastal areas near the low-lying colony being evacuated ahead of the approaching cyclone.,cyclone
+It has been raining heavily for hours in the railway station road.,heavy_rainfall
+"A lightning bolt hit a building near Whitefield, minor damage reported.",lightning
+"Dust storm reported in the riverside colony, air quality has worsened significantly.",dust_storm
+The cyclone is expected to make landfall by tonight near the airport road.,cyclone
+"Dust storm hit the airport road suddenly, sky turned orange, hard to breathe outside.",dust_storm
+Unusually high temperatures recorded in the riverside colony for the third day in a row.,heatwave
+"Fog has covered Hebbal completely this morning, traffic moving very slowly.",fog
+"Scorching heat continues in Jayanagar for the past two hours, people advised to avoid stepping out.",heatwave
+The school near the railway station road announced holidays for an exam schedule.,other
+"severe downpour continuing in Koramangala, visibility very low.",heavy_rainfall
+Thunderstorm with gusty winds lashing the railway station road for the past two hours.,thunderstorm
+Unusually high temperatures recorded in Jayanagar for the third day in a row.,heatwave
+"Lightning strike reported near the market area, residents advised to stay indoors.",lightning
+The football tournament finals were held in the bus stand junction yesterday.,other
+"The river near the bus stand junction has crossed the danger mark, low-lying areas submerged.",flood
+"Dust storm hit Koramangala suddenly, sky turned orange, hard to breathe outside.",dust_storm
+"Strong dusty winds picked up near the industrial area, visibility dropping fast.",dust_storm
+Internet has been down in near the highway since this morning.,other
