@@ -134,6 +134,7 @@ def run_kafka() -> None:
         auto_offset_reset="latest",
         enable_auto_commit=True,
         value_deserializer=lambda value: json.loads(value.decode("utf-8")),
+        api_version=(2, 5, 0),
     )
     print(f"[WORKER] Listening on {KAFKA_TOPIC}, classifying + verifying each report...")
 

@@ -21,6 +21,7 @@ def consume(topic: str, timeout_ms: int = 5000) -> None:
         enable_auto_commit=True,
         value_deserializer=lambda value: json.loads(value.decode("utf-8")),
         consumer_timeout_ms=timeout_ms,
+        api_version=(2, 5, 0),
     )
 
     print(f"[CONSUMER] Listening on {topic}")

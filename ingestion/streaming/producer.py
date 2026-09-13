@@ -20,6 +20,7 @@ class StreamProducer:
                     value_serializer=lambda value: json.dumps(
                         value, ensure_ascii=False
                     ).encode("utf-8"),
+                    api_version=(2, 5, 0),
                 )
                 print(f"[KAFKA] Connected to {self.bootstrap}")
             except Exception as exc:
