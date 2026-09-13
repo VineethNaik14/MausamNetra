@@ -1,0 +1,12 @@
+id,source,text,latitude,longitude,timestamp,city,district,state,event_type,image
+WX001,citizen,"Heavy rainfall has caused severe waterlogging near Hebbal",13.0358,77.5970,2026-09-12T08:30:00+00:00,Bengaluru,Bengaluru Urban,Karnataka,Flood,image01.jpg
+WX002,weather_api,"Intense rainfall observed over Bengaluru region",13.0827,77.5877,2026-09-12T08:35:00+00:00,Bengaluru,Bengaluru Urban,Karnataka,Heavy Rainfall,
+WX003,public_feed,"Thunderstorm and lightning reported near Whitefield",12.9698,77.7499,2026-09-12T08:40:00+00:00,Bengaluru,Bengaluru Urban,Karnataka,Thunderstorm,
+WX004,citizen,"Same flood report repeated from another account",13.0358,77.5970,2026-09-12T08:42:00+00:00,Bengaluru,Bengaluru Urban,Karnataka,Flood,image01.jpg
+WX005,dataset,"Very high temperature reported in Delhi",28.6139,77.2090,2026-09-12T09:00:00+00:00,Delhi,,Delhi,Heatwave,
+WX006,citizen,"Dense fog reducing visibility on the highway",28.7041,77.1025,2026-09-12T09:05:00+00:00,Delhi,,Delhi,Fog,
+WX007,citizen,"Strong winds and hail reported by residents",19.0760,72.8777,2026-09-12T09:15:00+00:00,Mumbai,,Maharashtra,Hailstorm,
+WX008,public_feed,"Flooding reported after intense rainfall",13.0827,80.2707,2026-09-12T09:20:00+00:00,Chennai,,Tamil Nadu,Flood,
+WX009,citizen,"Lightning observed during severe thunderstorm",17.3850,78.4867,2026-09-12T09:25:00+00:00,Hyderabad,,Telangana,Lightning,
+WX010,citizen,"",17.3850,78.4867,2026-09-12T09:25:00+00:00,Hyderabad,,Telangana,,
+WX011,citizen,"Invalid location example",200.0,78.4867,2026-09-12T09:25:00+00:00,Hyderabad,,Telangana,,

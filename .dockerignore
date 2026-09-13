@@ -1,4 +1,5 @@
 ml/classification
+.venv/
 venv/
 __pycache__/
 *.pyc
