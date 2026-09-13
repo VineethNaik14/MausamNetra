@@ -1,0 +1,1 @@
+"""MausamRakshak Member 2 real-time ingestion package."""

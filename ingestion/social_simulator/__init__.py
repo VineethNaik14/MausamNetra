@@ -1,0 +1,1 @@
+from .simulator import generate_reports

@@ -4,8 +4,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import List, Optional
 
-from pydantic import BaseModel, Field
-
+from pydantic import BaseModel, ConfigDict, Field
 
 class VerificationStatus(str, Enum):
     VERIFIED = "VERIFIED"
@@ -75,8 +74,7 @@ class VerificationResult(BaseModel):
         default=False, description="True if any dependency failed and defaults were used."
     )
 
-    class Config:
-        use_enum_values = True
+    model_config = ConfigDict(use_enum_values=True)
 
 
 class BatchVerificationResult(BaseModel):
