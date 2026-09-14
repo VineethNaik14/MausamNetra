@@ -1,11 +1,17 @@
-FROM python:3.11-slim
+# =============================================================================
+# MausamNetra — single consolidated Dockerfile for every Python service.
+# Shared by: backend, classifier, verification, ingestion, pipeline-worker.
+# docker-compose.yml overrides `working_dir` + `command` per service.
+# =============================================================================
+FROM python:3.12-slim
 
-# OpenCV needs a couple of system libs even in headless mode.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender1 \
+        libpq5 \
+        curl \
+        libglib2.0-0 \
+        libsm6 \
+        libxext6 \
+        libxrender1 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -13,12 +19,19 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY backend ./backend
+COPY ml ./ml
+COPY ingestion ./ingestion
+COPY integration ./integration
+COPY data ./data
+COPY main.py .
 
-# Runs as a non-root user for basic container hygiene.
-RUN useradd --create-home appuser
+RUN mkdir -p backend/uploads/images backend/uploads/videos
+
+RUN useradd --create-home appuser && chown -R appuser:appuser /app
 USER appuser
 
-EXPOSE 8001
+EXPOSE 8000 8001
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001"]
+WORKDIR /app/backend
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

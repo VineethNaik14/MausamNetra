@@ -1,7 +1,75 @@
+#  Environment / secrets 
+.env
+.env.*
+! .env.example
+*.pem
+*.key
+
+#  Python 
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 .venv/
 venv/
-__pycache__/
-*.pyc
+env/
+ENV/
+*.egg-info/
+.eggs/
 .pytest_cache/
-.env
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.ipynb_checkpoints/
+
+# Alembic / DB
+*.sqlite3
+*.db
+
+#  ML artifacts 
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.h5
+*.ckpt
+ml/**/checkpoints/
+ml/**/models/*.bin
+ml/**/*.log
+ml/**/mlruns/
+ml/**/wandb/
+
+#  Frontend (Node / Vite) 
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/coverage/
+# keep lockfiles — comment out if you don't want them tracked
+# frontend/bun.lock
+# frontend/package-lock.json
+
+#  Uploads / user data / runtime output 
+uploads/*
+!uploads/.gitkeep
+data/*
+!data/.gitkeep
+
+#  Logs 
+*.log
+logs/
+
+#  Docker 
+*.pid
+
+#  OS / editor cruft 
+.DS_Store
+Thumbs.db
+.idea/
 .vscode/
+*.swp

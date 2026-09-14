@@ -1,5 +1,22 @@
 services:
-  # ---- Member 2: streaming backbone ----
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: mausamnetra-db
+    environment:
+      POSTGRES_USER: mausamnetra
+      POSTGRES_PASSWORD: mausamnetra
+      POSTGRES_DB: mausamnetra
+    ports:
+      - "5432:5432"
+    volumes:
+      - mausamnetra_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mausamnetra -d mausamnetra"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
   kafka:
     image: apache/kafka:3.9.0
     container_name: mausamnetra-kafka
@@ -18,74 +35,129 @@ services:
       - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
       - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
       - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
+    restart: unless-stopped
 
-  ingestion:
+  backend:
     build:
       context: .
-      dockerfile: ingestion/Dockerfile
-    container_name: mausamnetra-ingestion
+      dockerfile: Dockerfile
+    container_name: mausamnetra-backend
+    working_dir: /app/backend
+    env_file:
+      - ./backend/.env
     environment:
-      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
-      - KAFKA_TOPIC_CLEANED=weather.cleaned
+      DATABASE_URL: postgresql+psycopg://mausamnetra:mausamnetra@db:5432/mausamnetra
+      CLASSIFIER_SERVICE_URL: http://classifier:8000
+      VERIFICATION_SERVICE_URL: http://verification:8001
     depends_on:
-      - kafka
-    restart: unless-stopped
-
-  # ---- Member 3: event classification ----
-  classifier:
-    build: ./ml/classification
-    container_name: mausamnetra-classifier
+      db:
+        condition: service_healthy
+      classifier:
+        condition: service_started
+      verification:
+        condition: service_started
     ports:
       - "8000:8000"
+    volumes:
+      - ./backend/uploads:/app/backend/uploads
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+
+    command: >
+      sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
     restart: unless-stopped
 
-  # ---- Member 4: trust / verification engine ----
+  classifier:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mausamnetra-classifier
+    working_dir: /app/ml/classification
+    ports:
+      - "8002:8000"
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+    command: >
+      uvicorn api.main:app --app-dir . --host 0.0.0.0 --port 8000
+    restart: unless-stopped
+
   verification:
     build:
       context: .
-      dockerfile: Dockerfile.verification
+      dockerfile: Dockerfile
     container_name: mausamnetra-verification
+    working_dir: /app
     ports:
       - "8001:8001"
     environment:
       - LOG_LEVEL=INFO
       - CLASSIFIER_MODE=http
       - CLASSIFIER_HTTP_URL=http://classifier:8000
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8001/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+      
+    command: >
+      uvicorn main:app --host 0.0.0.0 --port 8001
     depends_on:
       - classifier
     restart: unless-stopped
 
-  # ---- Integration bridge: consumes weather.cleaned, calls classifier +
-  # verification in order, hands the merged record onward. Replace/extend
-  # once Member 5's backend owns persistence (see interfaces/repositories.py). ----
-  pipeline-worker:
+  ingestion:
     build:
       context: .
-      dockerfile: integration/Dockerfile
-    container_name: mausamnetra-pipeline-worker
+      dockerfile: Dockerfile
+    container_name: mausamnetra-ingestion
+    working_dir: /app
     environment:
       - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
       - KAFKA_TOPIC_CLEANED=weather.cleaned
-      - CLASSIFIER_URL=http://classifier:8000
-      - VERIFICATION_URL=http://verification:8001
+    command: python -m ingestion.realtime_demo --interval 3
     depends_on:
       - kafka
-      - classifier
-      - verification
     restart: unless-stopped
 
-  # ---- Member 5 placeholder: PostgreSQL + PostGIS ----
-  db:
-    image: postgis/postgis:16-3.4
-    container_name: mausamnetra-db
+  pipeline-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mausamnetra-pipeline-worker
+    working_dir: /app
     environment:
-      POSTGRES_USER: mausamnetra
-      POSTGRES_PASSWORD: mausamnetra
-      POSTGRES_DB: mausamnetra
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - KAFKA_TOPIC_CLEANED=weather.cleaned
+      - BACKEND_URL=http://backend:8000
+    command: python -m integration.pipeline_worker --mode kafka
+    depends_on:
+      - kafka
+      - backend
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mausamnetra-frontend
+    env_file:
+      - ./frontend/.env
+    environment:
+      VITE_API_URL: http://localhost:8000/api/v1
     ports:
-      - "5432:5432"
-    volumes:
-      - mausamnetra_pgdata:/var/lib/postgresql/data
+      - "3000:3000"
+    depends_on:
+      - backend
     restart: unless-stopped
 
 volumes:

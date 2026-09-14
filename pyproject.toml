@@ -1,5 +1,34 @@
 [tool.pytest.ini_options]
-pythonpath = ["."]
+# "." lets de_tests/ import `ingestion.*`.
+#
+# "mausamnetra_backend" and "ml/classification" make `import app` and
+# `import src` resolve explicitly, rather than depending on pytest's
+# implicit package-root-walk to add those directories to sys.path (which is
+# what made them work before, and is easy to break by touching __init__.py
+# files nearby — see ml/classification/__init__.py below).
+pythonpath = [".", "backend", "ml/classification"]
+# mausamnetra_backend's own tests import each other with a bare
+# `from tests.conftest import auth_headers` (see mausamnetra_backend/tests/
+# test_*.py), which only works if "tests" resolves to ITS OWN tests/
+# package and nothing else's. Before this project's ingestion swap,
+# ml/classification/tests silently collided with it under the same bare
+# "tests" name (neither mausamnetra_backend/ nor, previously,
+# ml/classification/ had an __init__.py — so pytest's package-root-walk
+# stopped at each "tests" folder for both, giving them the same name). We
+# added ml/classification/__init__.py so ml/classification/tests now
+# resolves to the unique dotted name "classification.tests" instead,
+# leaving mausamnetra_backend/tests as the sole "tests" package. Do NOT add
+# an __init__.py to mausamnetra_backend/ itself — that would push its own
+# package-root-walk up to the project root and break `import app` the same
+# way it broke `import src` here before "ml/classification" was added
+# above to pythonpath explicitly.
+#
+# mausamnetra_backend's own pytest.ini sets asyncio_mode = auto too, but
+# that file is only read when pytest is invoked with mausamnetra_backend/
+# as rootdir; a single root-wide run only reads this file, so it has to be
+# repeated here for the backend's async tests to actually execute instead
+# of being silently skipped under pytest-asyncio's default "strict" mode.
+asyncio_mode = "auto"
 filterwarnings = [
     "ignore:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
 ]

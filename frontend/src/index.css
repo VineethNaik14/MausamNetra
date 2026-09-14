@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+
+/* Smooth pulse animation for User Location Marker */
+.user-location-pulse {
+  animation: location-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes location-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Stable HTML User Location Marker */
+.user-location-marker-container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-location-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #34C759;
+  border: 2.5px solid #F4F6F6;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+
+.user-location-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  background-color: #34C759;
+  border-radius: 50%;
+  z-index: 1;
+  animation: user-ring-pulse 2s ease-out infinite;
+}
+
+@keyframes user-ring-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.glass-card {
+  background: rgba(14, 20, 26, 0.65); /* darker than page navy #1C2833 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(244, 246, 246, 0.06); /* subtler edge, since dark-on-dark needs less contrast to separate */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4); /* inset shadow instead of drop shadow, to sell "recessed" */
+}
+
+
+/* Subtle topographic-line background */
+.bg-contour-lines {
+  background-color: #1C2833;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%2334C759' stroke-opacity='0.08' stroke-width='1'%3E%3Cpath d='M0 100 Q100 50 200 100 T400 100'/%3E%3Cpath d='M0 160 Q100 110 200 160 T400 160'/%3E%3Cpath d='M0 220 Q100 170 200 220 T400 220'/%3E%3Cpath d='M0 280 Q100 230 200 280 T400 280'/%3E%3Cpath d='M-50 40 Q50 -10 150 40 T350 40'/%3E%3Cpath d='M-50 340 Q50 290 150 340 T350 340'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+/* Marker hover feedback - targets the inner wrapper, never the
+   Leaflet-positioned outer element, to avoid fighting its transform. */
+.custom-leaflet-icon {
+  cursor: pointer;
+}
+.custom-leaflet-icon:hover > div {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5)) brightness(1.08);
+}

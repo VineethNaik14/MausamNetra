@@ -1,14 +1,22 @@
 from datetime import datetime, timezone
 
+from .backend_bridge import push_report
 from .citizen_reports.ingestion import ingest_citizen_report
 from .dedup import TTLSeenCache
 from .streaming.producer import StreamProducer
 
 
 def main():
-    """Run an end-to-end local demonstration without requiring a live API."""
+    """Run an end-to-end local demonstration of the ingestion pipeline.
+
+    Steps 1-5 (ingest/clean/validate/normalize/dedupe/stream) never needed a
+    live API. Step 6 now also delivers the report to the real backend
+    (POST /api/v1/reports) so it actually reaches the DB, AI pipeline, and
+    dashboard - set BACKEND_URL if the backend isn't on the default
+    http://localhost:8000/api/v1. If the backend isn't running, this step
+    logs the failure and the rest of the demo still completes."""
     print("=" * 72)
-    print("MAUSAMRAKSHAK — MEMBER 2 REAL-TIME PIPELINE DEMO")
+    print("MAUSAMNETRA")
     print("=" * 72)
 
     raw = {
@@ -26,21 +34,33 @@ def main():
 
     report = ingest_citizen_report(raw)
 
-    print("[1/6] INGESTION      -> citizen report received")
-    print("[2/6] CLEANING       -> text/source normalized")
-    print("[3/6] VALIDATION     -> coordinates/timestamp/schema validated")
-    print("[4/6] NORMALIZATION  -> canonical report created")
+    print("[1/7] INGESTION      -> citizen report received")
+    print("[2/7] CLEANING       -> text/source normalized")
+    print("[3/7] VALIDATION     -> coordinates/timestamp/schema validated")
+    print("[4/7] NORMALIZATION  -> canonical report created")
 
     seen = TTLSeenCache()
     producer = StreamProducer("weather.cleaned")
 
     if seen.is_duplicate(report):
-        print("[5/6] DEDUPLICATION  -> duplicate skipped")
+        print("[5/7] DEDUPLICATION  -> duplicate skipped")
     else:
         producer.publish(report)
-        print("[5/6] STREAMING      -> report published")
+        print("[5/7] STREAMING      -> report published")
 
-    print("[6/6] HANDOFF        -> ready for Member 3 classifier / Member 5 backend")
+    print(
+        "[6/7] HANDOFF        -> delivering to backend (classification + verification run there)"
+    )
+    delivered = push_report(report)
+    if delivered:
+        print(
+            f"[7/7] BACKEND        -> stored as report {delivered['id']} (status={delivered['status']})"
+        )
+    else:
+        print(
+            "[7/7] BACKEND        -> delivery failed (is the backend running? see message above)"
+        )
+
     producer.close()
 
     print("\nCanonical report:")

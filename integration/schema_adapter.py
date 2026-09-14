@@ -33,6 +33,13 @@ SOURCE_MAP = {
     "dataset": "verified_news",       # historical/government-style dataset records
     "public_feed": "social_media",
     "simulated_social": "social_media",
+    # Optional MausamRakshak V2 real-data adapters (ingestion/imd/client.py,
+    # ingestion/web/gdelt_client.py). They bypass cleaner.normalize_source
+    # and emit these literal uppercase strings, so they need an explicit
+    # entry or they'd degrade to ReportSource.UNKNOWN and be scored
+    # conservatively by source_reliability even once genuinely live.
+    "IMD": "government",
+    "GDELT": "verified_news",
 }
 
 

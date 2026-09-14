@@ -1,125 +1,139 @@
-"""End-to-end bridge: weather.cleaned (Member 2) -> classifier (Member 3)
--> verification (Member 4).
+"""Bridge: weather.cleaned (Member 2's Kafka topic) -> your backend's
+POST /api/v1/reports.
 
-This is the piece that did not belong to any single member: Member 2
-publishes cleaned reports, Member 3 and Member 4 each expose an
-independent FastAPI microservice, and something has to call them in
-order and hand the merged result onward (to Member 5's backend, once it
-exists). That "something" is this file.
-
-Two modes:
-
-1. ``--mode demo``  (default, no Kafka/services required to *start* the
-   script, but the classifier + verification services must be running)
-   Sends ONE sample citizen report through the full pipeline. This is
-   the fastest way to prove the September 12 integration milestone:
-
-       INGEST -> CLASSIFY -> VERIFY
-
-2. ``--mode kafka``  Consumes continuously from the real
-   ``weather.cleaned`` Kafka topic that Member 2's producer publishes
-   to, so this becomes the always-on integration worker once Kafka is
-   up (``docker compose up -d``).
-
-Usage
------
-    # start the two ML services first (see README / docker-compose)
-    python -m integration.pipeline_worker --mode demo
-    python -m integration.pipeline_worker --mode kafka
+Classification and verification are NOT done here anymore — your
+backend's ReportService already calls the real classifier/trust-engine/
+duplicate-detector adapters for every report it receives, so forwarding
+the raw report and letting it run through that same pipeline avoids
+classifying/verifying twice.
 """
 from __future__ import annotations
 
 import argparse
 import json
 import os
-from datetime import datetime, timezone
-from typing import Any, Dict
+import time
+from typing import Any, Dict, Optional
 
 import requests
 
-from integration.schema_adapter import (
-    apply_classification,
-    to_classifier_request,
-    to_normalized_weather_report,
-    to_related_reports,
-)
-
-CLASSIFIER_URL = os.getenv("CLASSIFIER_URL", "http://localhost:8000")
-VERIFICATION_URL = os.getenv("VERIFICATION_URL", "http://localhost:8001")
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 KAFKA_TOPIC = os.getenv("KAFKA_TOPIC_CLEANED", "weather.cleaned")
 KAFKA_BOOTSTRAP = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "")
 
+# Ingestion's report["source"] strings line up with the backend's
+# SourceType enum for everything except "dataset", which the backend
+# doesn't have a dedicated source for — closest existing match is the
+# "Regional News Feed" (NEWS) source, mirroring schema_adapter.py's own
+# "dataset" -> "verified_news" mapping.
+#
+# "IMD" and "GDELT" are the two optional real-data adapters added in the
+# MausamRakshak V2 ingestion module (ingestion/imd/client.py,
+# ingestion/web/gdelt_client.py). Both build WeatherReport objects directly
+# instead of going through cleaner.normalize_source, so they emit these
+# exact literal, uppercase strings rather than a lowercase/underscored
+# alias. They map onto the backend's seeded "Govt Disaster Cell"
+# (GOVERNMENT) and "Regional News Feed" (NEWS) sources respectively so
+# that, once a team member configures IMD_API_KEY or wires up the GDELT
+# poller, reports don't silently fall through to the "citizen" default.
+_SOURCE_TYPE_MAP = {
+    "citizen": "citizen",
+    "weather_api": "weather_api",
+    "public_feed": "public_feed",
+    "simulated_social": "simulated_social",
+    "dataset": "news",
+    "IMD": "government",
+    "GDELT": "news",
+}
 
-def classify(report: Dict[str, Any]) -> Dict[str, Any]:
-    payload = to_classifier_request(report)
-    resp = requests.post(f"{CLASSIFIER_URL}/classify", json=payload, timeout=5)
+_source_id_cache: Dict[str, str] = {}
+
+
+def _load_source_ids() -> None:
+    """Fetch active sources once and index by SourceType."""
+    resp = requests.get(f"{BACKEND_URL}/api/v1/sources", timeout=5)
     resp.raise_for_status()
-    return resp.json()
+    for source in resp.json()["data"]:
+        _source_id_cache[source["type"]] = source["id"]
 
 
-def verify(report: Dict[str, Any], related: list[Dict[str, Any]] | None = None) -> Dict[str, Any]:
+def _resolve_source_id(report_source: str) -> Optional[str]:
+    if not _source_id_cache:
+        _load_source_ids()
+    source_type = _SOURCE_TYPE_MAP.get(report_source, "citizen")
+    return _source_id_cache.get(source_type)
+
+
+def submit_to_backend(report: Dict[str, Any]) -> Dict[str, Any]:
+    source_id = _resolve_source_id(report.get("source", ""))
+    if source_id is None:
+        raise RuntimeError(f"No backend source configured for '{report.get('source')}'")
+
     payload = {
-        "report": to_normalized_weather_report(report),
-        "related_reports": to_related_reports(related or []),
+        "source_id": source_id,
+        "text": report.get("text", ""),
+        "latitude": report["latitude"],
+        "longitude": report["longitude"],
+        "city": report.get("city"),
+        "district": report.get("district"),
+        "state": report.get("state"),
+        "media_url": report.get("media_url"),
+        "timestamp": report.get("timestamp"),
+        "report_metadata": report.get("metadata") or None,
     }
-    resp = requests.post(f"{VERIFICATION_URL}/api/v1/verification/verify", json=payload, timeout=10)
+    resp = requests.post(f"{BACKEND_URL}/api/v1/reports", json=payload, timeout=15)
     resp.raise_for_status()
     return resp.json()
 
 
 def process_one(report: Dict[str, Any]) -> Dict[str, Any]:
-    """Run a single canonical WeatherReport dict through classify -> verify."""
-    print(f"[1/3] INGESTED    -> report_id={report['id']} source={report.get('source')}")
-
-    classification = classify(report)
-    report = apply_classification(report, classification)
+    print(f"[1/2] INGESTED -> id={report.get('id')} source={report.get('source')}")
+    result = submit_to_backend(report)
+    created = result["data"]
     print(
-        f"[2/3] CLASSIFIED  -> event_type={report['event_type']} "
-        f"confidence={report['event_confidence']:.2f}"
+        f"[2/2] SUBMITTED -> backend report_id={created['id']} "
+        f"status={created['status']} event_type={created.get('event_type')}"
     )
-
-    result = verify(report)
-    print(
-        f"[3/3] VERIFIED    -> trust_score={result['trust_score']} "
-        f"status={result['status']}"
-    )
-
-    merged = {**report, "verification": result}
-    return merged
+    return created
 
 
 def run_demo() -> None:
-    """No Kafka needed: pushes one sample citizen report through the pipeline.
+    from datetime import datetime, timezone
 
-    Mirrors ingestion/demo.py's sample so the two demos can be compared
-    side by side.
-    """
     sample = {
         "id": "demo-0001",
         "source": "citizen",
-        "source_type": "citizen_report",
         "text": "Heavy rainfall has caused severe waterlogging near Hebbal.",
-        "event_type": None,
-        "event_confidence": None,
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "latitude": 13.0358,
         "longitude": 77.5970,
         "city": "Bengaluru",
         "district": "Bengaluru Urban",
         "state": "Karnataka",
-        "media_url": "image01.jpg",
+        "media_url": None,
         "metadata": {},
     }
-
     print("=" * 72)
-    print("MAUSAMNETRA — INGESTION -> CLASSIFICATION -> VERIFICATION (DEMO)")
+    print("MAUSAMNETRA — INGESTION -> BACKEND (DEMO)")
     print("=" * 72)
-    merged = process_one(sample)
+    process_one(sample)
 
-    print("\nFinal merged record (ready for Member 5 backend / DB):")
-    print(json.dumps(merged, indent=2, default=str))
+def run_simulate(count: int, interval: float) -> None:
+    """Generate synthetic social-media-style reports and POST them straight
+    to the backend, without needing Kafka running at all. Best option for a
+    live demo: judges watch reports appear on the dashboard in real time."""
+    from ingestion.social_simulator.simulator import generate_reports
 
-
+    print(f"[WORKER] Simulating {count or 'unlimited'} reports, {interval}s apart -> {BACKEND_URL}")
+    try:
+        for report in generate_reports(None if count == 0 else count):
+            try:
+                process_one(report)
+            except requests.RequestException as exc:
+                print(f"[WORKER] Backend error for report_id={report.get('id')}: {exc}")
+            time.sleep(interval)
+    except KeyboardInterrupt:
+        print("\n[WORKER] Stopped by user")
 def run_kafka() -> None:
     if not KAFKA_BOOTSTRAP:
         print("[WORKER] KAFKA_BOOTSTRAP_SERVERS is not set; falling back to --mode demo.")
@@ -136,16 +150,15 @@ def run_kafka() -> None:
         value_deserializer=lambda value: json.loads(value.decode("utf-8")),
         api_version=(2, 5, 0),
     )
-    print(f"[WORKER] Listening on {KAFKA_TOPIC}, classifying + verifying each report...")
+    print(f"[WORKER] Listening on {KAFKA_TOPIC}, forwarding each report to {BACKEND_URL}...")
 
     try:
         for message in consumer:
             report = message.value
             try:
-                merged = process_one(report)
-                print(json.dumps(merged, indent=2, default=str))
+                process_one(report)
             except requests.RequestException as exc:
-                print(f"[WORKER] Downstream service error for report_id={report.get('id')}: {exc}")
+                print(f"[WORKER] Backend error for report_id={report.get('id')}: {exc}")
     except KeyboardInterrupt:
         print("\n[WORKER] Stopped by user")
     finally:
@@ -154,11 +167,14 @@ def run_kafka() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["demo", "kafka"], default="demo")
+    parser.add_argument("--mode", choices=["demo", "kafka", "simulate"], default="demo")
+    parser.add_argument("--count", type=int, default=0, help="0 = run forever (simulate mode)")
+    parser.add_argument("--interval", type=float, default=5.0, help="seconds between reports (simulate mode)")
     args = parser.parse_args()
-
     if args.mode == "demo":
         run_demo()
+    elif args.mode == "simulate":
+        run_simulate(args.count, args.interval)
     else:
         run_kafka()
 

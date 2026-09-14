@@ -20,6 +20,10 @@ class StreamProducer:
                     value_serializer=lambda value: json.dumps(
                         value, ensure_ascii=False
                     ).encode("utf-8"),
+                    # Pinned explicitly: kafka-python's auto-version-detection
+                    # handshake silently fails against modern KRaft-mode
+                    # brokers (e.g. apache/kafka:3.9.0), so autodetection is
+                    # never allowed to run here.
                     api_version=(2, 5, 0),
                 )
                 print(f"[KAFKA] Connected to {self.bootstrap}")
